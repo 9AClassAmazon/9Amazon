@@ -185,7 +185,7 @@
 
 .card {
   border: 2px solid #1e2be0;
-  width: 100px;
+  width: 90px;
   margin: auto;
   background: white;
 }
@@ -227,28 +227,31 @@
   border-radius: 30px;
   font-weight: bold;
 }
+
 .all-anggota {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 🔥 3 kolom */
   gap: 15px;
   margin-top: 20px;
+  padding: 0 20px;
 }
 
-.anggota-card {
-  width: 120px;
+.anggota-card{
   border: 2px solid #1e2be0;
+  width: 90px;
+  margin: auto;
   background: white;
 }
 
 .anggota-card img {
-  width: 100%;
+width: 100%;
+  display: block;
 }
 
 .nama {
   border-top: 2px solid #1e2be0;
   padding: 5px;
-  font-size: 12px;
+  font-size: 5px;
   color: #1e2be0;
 }
   </style>
@@ -267,7 +270,7 @@
 
 <div class="nav">
   <div class="slider"></div>
-  <a data-href="9Amazon.html">About</a>
+  <a data-href="index.html">About</a>
   <a data-href="kegiatan.html">Kegiatan</a>
   <a data-href="anggota.html"class="active">Anggota</a>
 </div>
@@ -393,13 +396,41 @@ tabs.forEach(tab => {
 </script>
 <script>
 const anggota = [
-  "Adelia Putri Ergita",
-  "Alyanis Elshabrina",
-  "Ersa Mariska",
-  "Fatir Nur Rizqi",
-  "Hasby Ali Mubarak",
-  "Tiara Isabelle",
-  "Alyanis Ergita"
+"Adelia Putri Ergita",
+"Aisyah Siti Rabiah",
+"Alenta Nur Aisyah",
+"Aliza Regina Putri",
+"Alyanis Elshabrina",
+"Apdan Ramadhan",
+"Ariya Aprilio",
+"Bunga Putri Wijaya",
+"Davin Oktavian Saputro",
+"Erlan Firgi",
+"Ersa Mariska",
+"Evi Zannati Bilqis",
+"Fahmi Dhika Harsono",
+"Fatir Nur Rizqi",
+"Fergi Maulana",
+"Fhasya Rizki Ramadhan",
+"Hafidz Maulana Yusuf",
+"Hasby Ali Mubarak",
+"Khansa Rahmania Rosana",
+"M Sabarudin",
+"Maria Novita Besa",
+"Martin Al Fairus Khanafi",
+"Muhammad Aditya Rahmawan",
+"Muhammad Adzam Rosyid",
+"Muhammad Faiz Alfinnas",
+"Muhammad Radit Kurniawan",
+"Muhammad Surya Mulya Putra",
+"Nadiva Aisy Ramadhani",
+"Nur Rahmadina",
+"Radella Jacinda Helsa",
+"Shalbia Immaniar",
+"Siti Khoirunnisa",
+"Theresia Vaelen",
+"Tiara Isabelle",
+"Vanya Dwi Arifan"
 ];
 
 // 🔥 urutkan abjad
@@ -412,7 +443,7 @@ const container = document.getElementById("listAnggota");
 anggota.forEach(nama => {
 
   // ubah nama jadi format file (spasi -> - dan lowercase)
-  let file = nama.toLowerCase().replace(/ /g, "-");
+  let file = nama.toLowerCase().replace(/ /g, "_");
 
   container.innerHTML += `
     <div class="anggota-card">
